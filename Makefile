@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 00:23:16 by zaiicko           #+#    #+#              #
-#    Updated: 2024/07/03 13:42:59 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/07/04 19:54:22 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,15 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 INC_DIR = inc
 INC = -I$(INC_DIR) -I$(LIBFT_DIR)
+SRC_DIR = srcs
+OBJ_DIR = obj
+RM = rm -rf
 
 SRCS =	push_swap.c \
 
-SRC = $(addprefix srcs/, $(SRCS))
+SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 all: logo $(NAME) 
 
@@ -31,14 +34,18 @@ $(NAME):	$(OBJ)
 			@cp $(LIBFT) $(NAME)
 			@ar rcs $(NAME) $(OBJ)
 
-.c.o:
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 		@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
+$(OBJ_DIR):
+		@mkdir -p $(OBJ_DIR)
+
 clean:
-			@$(RM) $(OBJ)
+			@$(RM) $(OBJ_DIR)
 			@make clean -C libft
 
 fclean: clean
+		@$(RM) $(OBJ_DIR)
 		@$(RM) $(NAME)
 		@make fclean -C libft
 
