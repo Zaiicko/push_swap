@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   node_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/06 19:00:40 by zaiicko          ###   ########.fr       */
+/*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
+/*   Updated: 2024/07/06 19:14:40 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../inc/push_swap.h"
 
-# include "../libft/inc/libft.h"
-
-typedef struct s_node
+t_node	*ft_newnode(int data)
 {
-	int				data;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
-
-t_node	*ft_newnode(int data);
-
-#endif
+	t_node	*new = (t_node)malloc(sizeof(t_node));
+	if (!new)
+		return (NULL);
+	new->data = data;
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
+}
