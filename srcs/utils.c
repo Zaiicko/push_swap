@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/06 20:54:37 by zaiicko          ###   ########.fr       */
+/*   Created: 2024/07/06 19:08:09 by zaiicko           #+#    #+#             */
+/*   Updated: 2024/07/07 02:42:23 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../inc/push_swap.h"
 
-# include "../libft/inc/libft.h"
-
-typedef struct s_node
+void	ft_free_node(t_node *node)
 {
-	int				data;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
+	t_node	*tmp;
 
-t_node	*ft_newnode(int data);
-void	ft_free_node(t_node *node);
-void	ft_print_node(t_node *node);
+	while (node)
+	{
+		temp = node;
+		node = node->next;
+		free(temp);
+	}
+}
 
-#endif
+void	ft_print_node(t_node *node)
+{
+	while (node)
+	{
+		ft_printf(" %d\n", node->data);
+		node = node->next;
+	}
+}
