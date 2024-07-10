@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/06 20:54:37 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/10 19:00:21 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ typedef struct s_node
 t_node	*ft_newnode(int data);
 void	ft_free_node(t_node *node);
 void	ft_print_node(t_node *node);
+void	ft_error(void);
 
 #endif

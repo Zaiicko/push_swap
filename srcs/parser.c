@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:28:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/07 02:42:12 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/10 19:00:44 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ void args_parser(t_node **a, int ac, char **av)
 	while(i < ac)
 	{
 		if (!ft_isdigit(argv[i]))
-		{
-			write(2, "Error\n", 6);
-			exit(1);
-		}
+			ft_error();
 	}
 }
