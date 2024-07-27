@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 00:23:16 by zaiicko           #+#    #+#              #
-#    Updated: 2024/07/27 20:59:51 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/07/27 23:58:43 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRC_DIR = srcs
 OBJ_DIR = obj
 RM = rm -rf
 
-SRCS =	push_swap.c \
+SRCS =	test.c \
+	utils.c \
+	node_utils.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 
