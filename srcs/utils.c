@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 19:08:09 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/10 19:00:08 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/27 23:59:19 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_free_node(t_node *node)
 
 	while (node)
 	{
-		temp = node;
+		tmp = node;
 		node = node->next;
-		free(temp);
+		free(tmp);
 	}
 }
 
