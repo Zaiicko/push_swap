@@ -6,12 +6,12 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 00:23:16 by zaiicko           #+#    #+#              #
-#    Updated: 2024/07/14 23:20:55 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/07/27 20:59:51 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -29,10 +29,11 @@ OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 all: logo $(NAME) 
 
-$(NAME):	$(OBJ)
-			@make -C $(LIBFT_DIR)
-			@cp $(LIBFT) $(NAME)
-			@ar rcs $(NAME) $(OBJ)
+$(NAME):	$(OBJ) $(LIBFT)
+		@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+		@make -C $(LIBFT_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 		@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
@@ -42,16 +43,15 @@ $(OBJ_DIR):
 
 clean:
 			@$(RM) $(OBJ_DIR)
-			@make clean -C libft
+			@make clean -C $(LIBFT_DIR)
 
 fclean: clean
-		@$(RM) $(OBJ_DIR)
 		@$(RM) $(NAME)
-		@make fclean -C libft
+		@make fclean -C $(LIBFT_DIR)
 
 re:		fclean all
 
-logo :
+logo:
 	@echo "\033[31m"
 	@echo "                                                                                               "
 	@echo " _|_|_|                        _|              _|_|_|                                          "
