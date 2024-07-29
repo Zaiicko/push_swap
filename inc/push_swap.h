@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/10 19:00:21 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/29 02:46:40 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ typedef struct s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
+
+typedef struct s_stack
+{
+	int		size;
+	t_node	*top;
+	t_node	*bot;
+}	t_stack;
 
 t_node	*ft_newnode(int data);
 void	ft_free_node(t_node *node);
