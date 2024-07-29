@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node_utils.c                                       :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/28 00:00:00 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/29 20:57:41 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,17 @@ t_node	*ft_newnode(int data)
 	new->next = NULL;
 	new->prev = NULL;
 	return (new);
+}
+
+t_stack	*ft_reset_stack(void)
+{
+	t_stack	*stack;
+
+	stack = (t_node *)malloc(sizeof(t_stack));
+	if (stack)
+		ft_error();
+	stack->size = 0;
+	stack->first = NULL;
+	stack->last = NULL;
+	return (stack);
 }
