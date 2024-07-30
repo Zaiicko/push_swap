@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 00:23:16 by zaiicko           #+#    #+#              #
-#    Updated: 2024/07/29 21:18:49 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/07/30 03:37:32 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ RM = rm -rf
 
 SRCS =	test.c \
 	utils.c \
+	utils3.c \
 	utils2.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))

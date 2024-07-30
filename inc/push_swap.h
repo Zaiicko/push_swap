@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/29 21:19:01 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/30 03:37:20 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void	ft_free_node(t_node *node);
 void	ft_print_node(t_node *node);
 void	ft_error(void);
 t_stack	*ft_reset_stack(void);
+void	add_int(int data, t_stack *stack);
+void	fill_stack(char **av, t_stack *stack);
 
 #endif
