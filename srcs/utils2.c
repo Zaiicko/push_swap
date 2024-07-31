@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/29 20:57:41 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/31 05:02:27 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ t_stack	*ft_reset_stack(void)
 {
 	t_stack	*stack;
 
-	stack = (t_node *)malloc(sizeof(t_stack));
+	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (stack)
 		ft_error();
 	stack->size = 0;
-	stack->first = NULL;
-	stack->last = NULL;
+	stack->top = NULL;
+	stack->bot = NULL;
 	return (stack);
 }
