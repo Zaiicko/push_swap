@@ -1,22 +1,24 @@
 #include "../inc/push_swap.h"
 
-int	main()
+int main(int ac, char **av) 
 {
-	int	data = 5;
-	t_node	*node = ft_newnode(data);
+	if (ac < 2)
+		ft_error();
 
-	if (!node)
+	t_stack *stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!stack)
 		ft_error();
-	if (node->data != data)
-	{
-		ft_free_node(node);
-		ft_error();
-	}
-	else
-	{
-		ft_print_node(node);
-		ft_free_node(node);
-	}
+	stack->top = NULL;
+	stack->bot = NULL;
+	stack->size = 0;
+
+	fill_stack(av + 1, stack);
+
+	ft_printf("Nombres de la pile ::\n");
+	ft_print_lst(stack->top);
+
+	ft_free_lst(stack->top);
+	free(stack);
+
 	return (0);
 }
-		
