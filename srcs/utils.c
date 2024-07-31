@@ -6,13 +6,13 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 19:08:09 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/27 23:59:19 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/31 19:31:35 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_free_node(t_node *node)
+void	ft_free_lst(t_node *node)
 {
 	t_node	*tmp;
 
@@ -24,7 +24,7 @@ void	ft_free_node(t_node *node)
 	}
 }
 
-void	ft_print_node(t_node *node)
+void	ft_print_lst(t_node *node)
 {
 	while (node)
 	{

@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/30 03:37:20 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/31 19:34:21 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_stack
 }	t_stack;
 
 t_node	*ft_newnode(int data);
-void	ft_free_node(t_node *node);
-void	ft_print_node(t_node *node);
+void	ft_free_lst(t_node *node);
+void	ft_print_lst(t_node *node);
 void	ft_error(void);
 t_stack	*ft_reset_stack(void);
 void	add_int(int data, t_stack *stack);
