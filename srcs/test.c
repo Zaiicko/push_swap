@@ -5,20 +5,27 @@ int main(int ac, char **av)
 	if (ac < 2)
 		ft_error();
 
-	t_stack *stack = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack)
-		ft_error();
-	stack->top = NULL;
-	stack->bot = NULL;
-	stack->size = 0;
+	t_stack *a = ft_reset_stack();
+ 	t_stack *b = ft_reset_stack();
 
-	fill_stack(av + 1, stack);
+	fill_stack(av + 1, b);
 
-	ft_printf("Nombres de la pile ::\n");
-	ft_print_lst(stack->top);
+	ft_printf("Nombres de la pile avant ::\n");
+	ft_print_lst(b->top);
+	ft_printf("---- a --------\n");
+	ft_print_lst(a->top);
 
-	ft_free_lst(stack->top);
-	free(stack);
+	pa(a, b);
+
+	ft_printf("Nombres de la pile apres ::\n");
+	ft_print_lst(b->top);
+	ft_printf("---- a --------\n");
+	ft_print_lst(a->top);
+
+	ft_free_lst(a->top);
+	ft_free_lst(b->top);
+	free(a);
+	free(b);
 
 	return (0);
 }
