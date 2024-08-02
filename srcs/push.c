@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/02 20:53:35 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/02 21:43:48 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	pa(t_stack *a, t_stack *b)
 		b->top->prev = NULL;
 	else
 		b->bot = NULL;
+	first_b->next = NULL;
 	if (a->top)
 		a->top->prev = first_b;
 	else
