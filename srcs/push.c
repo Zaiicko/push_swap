@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/02 21:43:48 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/02 21:52:28 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,28 @@ void	pa(t_stack *a, t_stack *b)
 	a->top = first_b;
 	b->size--;
 	a->size++;
+}
+
+void	pb(t_stack *a, t_stack *b)
+{
+	t_node	*first_a;
+
+	if (!a || !b)
+		ft_error();
+	else if (!a->size)
+		return ;
+	first_a = a->top;
+	a->top = a->top->next;
+	if (a->top)
+		a->top->prev = NULL;
+	else
+		a->bot = NULL;
+	first_a->next = NULL;
+	if (b->top)
+		b->top->prev = first_a;
+	else
+		b->bot = first_a;
+	b->top = first_a;
+	a->size--;
+	b->size++;
 }

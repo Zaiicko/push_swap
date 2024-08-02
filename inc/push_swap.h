@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/02 20:38:57 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/02 21:39:39 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	fill_stack(char **av, t_stack *stack);
 void	swap(t_stack *stack);
 void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
 
 #endif
