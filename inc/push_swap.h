@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/03 03:12:40 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/03 19:13:54 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
 void	rotate(t_stack *stack);
 void	rr(t_stack *a, t_stack *b);
+void	reverse_rotate(t_stack *stack);
+void	rrr(t_stack *a, t_stack *b);
 
 #endif

@@ -6,13 +6,13 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 00:23:16 by zaiicko           #+#    #+#              #
-#    Updated: 2024/08/03 02:47:33 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/08/04 20:39:12 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 INC_DIR = inc
@@ -28,6 +28,7 @@ SRCS =	test.c \
 	swap.c \
 	push.c \
 	rotate.c \
+	reverse_rotate.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 
