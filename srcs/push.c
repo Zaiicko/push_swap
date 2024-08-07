@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/03 02:00:40 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/07 18:34:55 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	pa(t_stack *a, t_stack *b)
 	a->top = first_b;
 	b->size--;
 	a->size++;
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack *a, t_stack *b)
@@ -60,4 +61,5 @@ void	pb(t_stack *a, t_stack *b)
 	b->top = first_a;
 	a->size--;
 	b->size++;
+	ft_printf("pb\n");
 }

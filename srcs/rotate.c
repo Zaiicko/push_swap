@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 21:55:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/06 21:51:27 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/07 18:38:25 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,21 @@ void	rotate(t_stack *stack)
 	stack->bot = tmp;
 }
 
+void	ra(t_stack *a)
+{
+	rotate(a);
+	ft_printf("ra\n");
+}
+
+void	rb(t_stack *b)
+{
+	rotate(b);
+	ft_printf("rb\n");
+}
+
 void	rr(t_stack *a, t_stack *b)
 {
 	rotate(a);
 	rotate(b);
+	ft_printf("rr\n");
 }

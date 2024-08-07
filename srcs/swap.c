@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 02:28:10 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/01 16:57:22 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/07 18:33:38 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,21 @@ void	swap(t_stack *stack)
 	stack->top = second;
 }
 
+void	sa(t_stack *a)
+{
+	swap(a);
+	ft_printf("sa\n");
+}
+
+void	sb(t_stack *b)
+{
+	swap(b);
+	ft_printf("sb\n");
+}
+
 void	ss(t_stack *a, t_stack *b)
 {
 	swap(a);
 	swap(b);
+	ft_printf("ss\n");
 }
