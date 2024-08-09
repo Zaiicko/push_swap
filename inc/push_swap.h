@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/07 18:42:53 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/09 22:50:26 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void	ra(t_stack *a);
 void	rb(t_stack *b);
 void	sa(t_stack *a);
 void	sb(t_stack *b);
+
+int		is_sorted(t_stack *stack);
 
 #endif

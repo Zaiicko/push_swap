@@ -6,42 +6,24 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 01:52:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/30 18:27:31 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/09 22:49:43 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	add_int(int data, t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
-	t_node	*node;
-
-	node = ft_newnode(data);
-	if (!stack)
-		ft_error();
-	if (stack->top)
-	{
-		stack->top->prev = node;
-		node->next = stack->top;
-	}
-	else
-		stack->bot = node;
-	stack->top = node;
-	stack->size++;
-}
-
-void	fill_stack(char **av, t_stack *stack)
-{
-	size_t	i;
-	int		data;
+	t_node	*tmp;
 
 	if (!stack)
 		ft_error();
-	i = 0;
-	while (av[i])
+	tmp = stack->top;
+	while (tmp->next)
 	{
-		data = ft_atoi(av[i]);
-		add_int(data, stack);
-		i++;
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
 	}
+	return (1);
 }

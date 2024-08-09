@@ -6,34 +6,42 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/02 20:51:18 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/07 19:20:25 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_node	*ft_newnode(int data)
+void	add_int(int data, t_stack *stack)
 {
-	t_node	*new;
+	t_node	*node;
 
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		ft_error();
-	new->data = data;
-	new->next = NULL;
-	new->prev = NULL;
-	return (new);
-}
-
-t_stack	*ft_reset_stack(void)
-{
-	t_stack	*stack;
-
-	stack = (t_stack *)malloc(sizeof(t_stack));
+	node = ft_newnode(data);
 	if (!stack)
 		ft_error();
-	stack->size = 0;
-	stack->top = NULL;
-	stack->bot = NULL;
-	return (stack);
+	if (stack->top)
+	{
+		stack->top->prev = node;
+		node->next = stack->top;
+	}
+	else
+		stack->bot = node;
+	stack->top = node;
+	stack->size++;
+}
+
+void	fill_stack(char **av, t_stack *stack)
+{
+	size_t	i;
+	int		data;
+
+	if (!stack)
+		ft_error();
+	i = 0;
+	while (av[i])
+	{
+		data = ft_atoi(av[i]);
+		add_int(data, stack);
+		i++;
+	}
 }
