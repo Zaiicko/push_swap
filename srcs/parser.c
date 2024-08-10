@@ -6,20 +6,63 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:28:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/10 19:00:44 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/10 19:31:53 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void args_parser(t_node **a, int ac, char **av)
+int	is_integer(char	*str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(i < ac)
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
 	{
-		if (!ft_isdigit(argv[i]))
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	check_av(char **av)
+{
+	size_t	i;
+
+	i = 0;
+	while (av[i])
+	{
+		if (!is_integer(av[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	args_parser(int ac, char **av)
+{
+	char	**tab;
+
+	if (ac < 2)
+		return ;
+	else if (ac > 2)
+	{
+		if (!check_av(av + 1))
 			ft_error();
 	}
+	else
+	{
+		tab = ft_split(av[1], ' ');
+		if (!tab || !check_av(tab))
+		{
+			ft_free_tab(tab);
+			ft_error();
+		}
+		ft_free_tab(tab);
+	}	
 }
