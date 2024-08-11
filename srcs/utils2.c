@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/10 23:30:16 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/11 20:47:24 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,62 @@ void	fill_stack(char **av, t_stack *stack)
 int	check_dup(t_stack *stack)
 {
 	t_node	*tmp;
+	t_node	*node;
 
 	if (!stack)
 		ft_error();
-	while (stack->top)
+	node = stack->top;
+	while (node)
 	{
-		tmp = stack->top->next;
+		tmp = node->next;
 		while (tmp)
 		{
-			if (stack->top->data == tmp->data)
+			if (node->data == tmp->data)
 				return (1);
 			tmp = tmp->next;
 		}
-		stack->top = stack->top->next;
+		node = node->next;
 	}
 	return (0);
+}
+
+int	check_max_int(t_stack *stack)
+{
+	t_node	*node;
+
+	if (!stack)
+		ft_error();
+	node = stack->top;
+	while(node)
+	{
+		if (node->data > INT_MAX || node->data < INT_MIN)
+			return (1);
+		node = node->next;
+	}
+	return (0);
+}
+
+long long	ft_matoi(const char *str)
+{
+	size_t				i;
+	int					signe;
+	unsigned long long	nbr;
+
+	i = 0;
+	signe = 1;
+	nbr = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			signe *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nbr = nbr * 10 + (str[i] - '0');
+		i++;
+	}
+	return (nbr * signe);
 }

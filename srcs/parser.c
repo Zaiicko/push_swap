@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:28:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/10 19:31:53 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/11 20:59:58 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,23 @@ int	check_av(char **av)
 	i = 0;
 	while (av[i])
 	{
-		if (!is_integer(av[i]))
+		if (!is_integer(av[i]) || is_int_max(av[i]))
 			return (0);
 		i++;
 	}
 	return (1);
+}
+
+int	is_int_max(char *str)
+{
+	ssize_t	nbr;
+
+	if (!str)
+		ft_error();
+	nbr = ft_matoi(str);
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		return (1);
+	return (0);
 }
 
 void	args_parser(int ac, char **av)
