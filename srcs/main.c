@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:04:49 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/11 21:16:36 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/12 01:19:06 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,5 @@ int	main(int ac, char **av)
 
 	args_parser(ac, av);
 	fill_stack(av, a);
-	if (check_dup(a))
-	{
-		ft_free_lst(a->top);
-		ft_error();
-	}
 	return (0);
 }

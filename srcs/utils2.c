@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/11 21:16:05 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/12 01:25:15 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,6 @@ void	fill_stack(char **av, t_stack *stack)
 		add_int(data, stack);
 		i++;
 	}
-}
-
-int	check_dup(t_stack *stack)
-{
-	t_node	*tmp;
-	t_node	*node;
-
-	if (!stack)
-		ft_error();
-	node = stack->top;
-	while (node)
-	{
-		tmp = node->next;
-		while (tmp)
-		{
-			if (node->data == tmp->data)
-				return (1);
-			tmp = tmp->next;
-		}
-		node = node->next;
-	}
-	return (0);
 }
 
 long long	ft_matoi(const char *str)
