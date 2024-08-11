@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/11 20:47:24 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/11 21:16:05 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,22 +63,6 @@ int	check_dup(t_stack *stack)
 				return (1);
 			tmp = tmp->next;
 		}
-		node = node->next;
-	}
-	return (0);
-}
-
-int	check_max_int(t_stack *stack)
-{
-	t_node	*node;
-
-	if (!stack)
-		ft_error();
-	node = stack->top;
-	while(node)
-	{
-		if (node->data > INT_MAX || node->data < INT_MIN)
-			return (1);
 		node = node->next;
 	}
 	return (0);
