@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:28:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/11 20:59:58 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/12 01:17:13 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	check_av(char **av)
 	i = 0;
 	while (av[i])
 	{
-		if (!is_integer(av[i]) || is_int_max(av[i]))
+		if (!is_integer(av[i]) || is_int_max(av[i]) || is_dup(av))
 			return (0);
 		i++;
 	}
@@ -53,6 +53,26 @@ int	is_int_max(char *str)
 	nbr = ft_matoi(str);
 	if (nbr > INT_MAX || nbr < INT_MIN)
 		return (1);
+	return (0);
+}
+
+int	is_dup(char **av)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (av[i])
+	{
+		j = i + 1;
+		while (av[j])
+		{
+			if (ft_matoi(av[i]) == ft_matoi(av[j]))
+				return (1);
+			j++;
+		}
+		i++;
+	}
 	return (0);
 }
 

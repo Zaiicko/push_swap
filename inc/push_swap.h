@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/11 21:16:25 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/12 01:14:47 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void	args_parser(int ac, char **av);
 int	check_dup(t_stack *stack);
 int	is_int_max(char *str);
 long long	ft_matoi(const char *str);
+int	is_dup(char **av);
 
 #endif
