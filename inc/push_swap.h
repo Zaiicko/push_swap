@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/12 01:26:29 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/12 04:30:29 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,37 +29,37 @@ typedef struct s_stack
 	t_node	*bot;
 }	t_stack;
 
-t_node	*ft_newnode(int data);
-void	ft_free_lst(t_node *node);
-void	ft_print_lst(t_node *node);
-void	ft_error(void);
-t_stack	*ft_reset_stack(void);
+t_node		*ft_newnode(int data);
+void		ft_free_lst(t_node *node);
+void		ft_print_lst(t_node *node);
+void		ft_error(void);
+t_stack		*ft_reset_stack(void);
 
-void	add_int(int data, t_stack *stack);
-void	fill_stack(char **av, t_stack *stack);
+void		add_int(int data, t_stack *stack);
+void		fill_stack(char **av, t_stack *stack);
 
-void	swap(t_stack *stack);
-void	ss(t_stack *a, t_stack *b);
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	rotate(t_stack *stack);
-void	rr(t_stack *a, t_stack *b);
-void	reverse_rotate(t_stack *stack);
-void	rrr(t_stack *a, t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	sa(t_stack *a);
-void	sb(t_stack *b);
+void		swap(t_stack *stack);
+void		ss(t_stack *a, t_stack *b);
+void		pa(t_stack *a, t_stack *b);
+void		pb(t_stack *a, t_stack *b);
+void		rotate(t_stack *stack);
+void		rr(t_stack *a, t_stack *b);
+void		reverse_rotate(t_stack *stack);
+void		rrr(t_stack *a, t_stack *b);
+void		rra(t_stack *a);
+void		rrb(t_stack *b);
+void		ra(t_stack *a);
+void		rb(t_stack *b);
+void		sa(t_stack *a);
+void		sb(t_stack *b);
 
-int		is_sorted(t_stack *stack);
+int			is_sorted(t_stack *stack);
 
-int	is_integer(char	*str);
-int	check_av(char **av);
-void	args_parser(int ac, char **av);
-int	is_int_max(char *str);
+int			is_integer(char	*str);
+int			check_av(char **av);
+void		args_parser(int ac, char **av);
+int			is_int_max(char *str);
 long long	ft_matoi(const char *str);
-int	is_dup(char **av);
+int			is_dup(char **av);
 
 #endif

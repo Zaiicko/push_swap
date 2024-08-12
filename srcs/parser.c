@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:28:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/12 01:17:13 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/12 04:18:48 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,5 @@ void	args_parser(int ac, char **av)
 			ft_error();
 		}
 		ft_free_tab(tab);
-	}	
+	}
 }
