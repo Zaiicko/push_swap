@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 00:23:16 by zaiicko           #+#    #+#              #
-#    Updated: 2024/08/10 19:26:44 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/08/18 18:54:29 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS =	main.c \
 	rotate.c \
 	reverse_rotate.c \
 	parser.c \
+	push_swap.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 

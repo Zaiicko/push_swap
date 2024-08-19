@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/12 04:30:29 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/19 05:42:59 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ void		sa(t_stack *a);
 void		sb(t_stack *b);
 
 int			is_sorted(t_stack *stack);
+void		push_swap(t_stack *a, t_stack *b);
+int			find_max_int(t_stack *stack);
+void		sort_three(t_stack *a);
 
 int			is_integer(char	*str);
 int			check_av(char **av);

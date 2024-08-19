@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 01:52:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/09 22:49:43 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/19 05:37:09 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,20 @@ int	is_sorted(t_stack *stack)
 		tmp = tmp->next;
 	}
 	return (1);
+}
+
+int	find_max_int(t_stack *stack)
+{
+	t_node	*tmp;
+	int	max;
+
+	tmp = stack->top;
+	max = tmp->data;
+	while (tmp)
+	{
+		if (tmp->data > max)
+			max = tmp->data;
+		tmp = tmp->next;
+	}
+	return (max);
 }
