@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 01:52:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/19 05:37:09 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/19 05:53:30 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	is_sorted(t_stack *stack)
 int	find_max_int(t_stack *stack)
 {
 	t_node	*tmp;
-	int	max;
+	int		max;
 
 	tmp = stack->top;
 	max = tmp->data;
