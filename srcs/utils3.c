@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 01:52:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/19 05:53:30 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/24 19:19:05 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,33 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-int	find_max_int(t_stack *stack)
+t_node	find_min_int(t_stack *stack)
 {
 	t_node	*tmp;
-	int		max;
+	t_node	*min;
 
 	tmp = stack->top;
-	max = tmp->data;
+	min = tmp;
 	while (tmp)
 	{
-		if (tmp->data > max)
-			max = tmp->data;
+		if (tmp->data < min->data)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+t_node	find_max_int(t_stack *stack)
+{
+	t_node	*tmp;
+	t_node	*max;
+
+	tmp = stack->top;
+	max = tmp;
+	while (tmp)
+	{
+		if (tmp->data > max->data)
+			max = tmp;
 		tmp = tmp->next;
 	}
 	return (max);
