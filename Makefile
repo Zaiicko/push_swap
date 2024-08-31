@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 00:23:16 by zaiicko           #+#    #+#              #
-#    Updated: 2024/08/18 18:54:29 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/08/25 03:05:55 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ RM = rm -rf
 
 SRCS =	main.c \
 	utils.c \
-	utils3.c \
 	utils2.c \
 	swap.c \
 	push.c \
@@ -31,6 +30,8 @@ SRCS =	main.c \
 	reverse_rotate.c \
 	parser.c \
 	push_swap.c \
+	sort_utils.c \
+	sort_utils2.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 

@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:04:49 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/18 19:08:50 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/29 19:00:20 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	main(int ac, char **av)
 	args_parser(ac, av);
 	fill_stack(av + 1, a);
 	push_swap(a, b);
+	ft_free_lst(a->top);	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/19 05:42:59 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 05:33:20 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@
 typedef struct s_node
 {
 	int				data;
+	int				pos;
+	int				min_moves;
+	int				above_median;
 	struct s_node	*next;
 	struct s_node	*prev;
+	struct s_node	*target;
 }	t_node;
 
 typedef struct s_stack
@@ -28,6 +32,13 @@ typedef struct s_stack
 	t_node	*top;
 	t_node	*bot;
 }	t_stack;
+
+
+void	print_pos(t_node *node);
+void	print_above(t_node *node);
+void	print_min(t_node *node);
+void	print_pma(t_stack *stack);
+void	set_posi(t_stack *stack);
 
 t_node		*ft_newnode(int data);
 void		ft_free_lst(t_node *node);
@@ -55,8 +66,18 @@ void		sb(t_stack *b);
 
 int			is_sorted(t_stack *stack);
 void		push_swap(t_stack *a, t_stack *b);
-int			find_max_int(t_stack *stack);
+t_node		*find_max_int(t_stack *stack);
+t_node		*find_min_int(t_stack *stack);
 void		sort_three(t_stack *a);
+void		set_pos(t_stack *a, t_stack *b);
+void		set_min_moves(t_stack *a, t_stack *b);
+void		min_target_closer(t_stack *a, t_stack *b);
+void		max_target_closer(t_stack *b, t_stack *a);
+t_node		*get_best_min_mov(t_stack *a);
+void		best_min_move_top(t_stack *stack, t_node *best, int is_a);
+void	a_to_b(t_stack *a, t_stack *b);
+void	b_to_a(t_stack *a, t_stack  *b);
+void	min_on_top(t_stack *a);
 
 int			is_integer(char	*str);
 int			check_av(char **av);
