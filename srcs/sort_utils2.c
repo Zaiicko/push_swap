@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:19 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 06:07:59 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 06:17:45 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,40 +107,4 @@ void	b_to_a(t_stack *a, t_stack  *b)
 {
 	best_min_move_top(a, b->top->target, 1);
 	pa(a, b);
-}
-
-void	print_pos(t_node *node)
-{
-	while (node)
-	{
-		printf("   %d\n", node->pos);
-		node = node->next;
-	}
-}
-void	print_min(t_node *node)
-{
-	while (node)
-	{
-		printf("   %d\n", node->min_moves);
-		node = node->next;
-	}
-}
-void	print_above(t_node *node)
-{
-	while (node)
-	{
-		printf("   %d\n", node->above_median);
-		node = node->next;
-	}
-}
-
-void	print_pma(t_stack *stack)
-{
-	ft_printf("\n --- POS -------------\n");
-	print_pos(stack->top);
-	ft_printf("\n --- ABOVE ------------- \n");
-	print_above(stack->top);
-	ft_printf("\n -----MIN MOVES----------- \n");
-	print_min(stack->top);
-	ft_printf("\n ---------------- \n");	
 }
