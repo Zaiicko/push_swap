@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 01:52:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 16:32:04 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 17:36:15 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,28 +89,10 @@ void	set_pos(t_stack *a, t_stack *b)
 	med_a = a->size / 2;
 	med_b = b->size / 2;
 	tmp = a->top;
-	while (tmp)
-	{
-		if (i < med_a)
-			tmp->above_median = 1;
-		else
-			tmp->above_median = 0;
-		tmp->pos = i;
-		i++;
-		tmp = tmp->next;
-	}
+	set_pos_node(tmp, i, med_a);
 	i = 0;
 	tmp = b->top;
-	while (tmp)
-	{
-		if (i < med_b)
-			tmp->above_median = 1;
-		else
-			tmp->above_median = 0;
-		tmp->pos = i;
-		i++;
-		tmp = tmp->next;
-	}
+	set_pos_node(tmp, i, med_b);
 }
 
 void	min_on_top(t_stack *a)

@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 16:38:06 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 17:34:33 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void		best_min_move_top(t_stack *stack, t_node *best, int is_a);
 void		a_to_b(t_stack *a, t_stack *b);
 void		b_to_a(t_stack *a, t_stack *b);
 void		min_on_top(t_stack *a);
+void		set_pos_node(t_node *tmp, int i, int med);
 
 int			is_integer(char	*str);
 int			check_av(char **av);
