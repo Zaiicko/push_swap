@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 05:33:20 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 16:38:06 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,6 @@ typedef struct s_stack
 	t_node	*top;
 	t_node	*bot;
 }	t_stack;
-
-
-void	print_pos(t_node *node);
-void	print_above(t_node *node);
-void	print_min(t_node *node);
-void	print_pma(t_stack *stack);
-void	set_posi(t_stack *stack);
 
 t_node		*ft_newnode(int data);
 void		ft_free_lst(t_node *node);
@@ -75,9 +68,9 @@ void		min_target_closer(t_stack *a, t_stack *b);
 void		max_target_closer(t_stack *b, t_stack *a);
 t_node		*get_best_min_mov(t_stack *a);
 void		best_min_move_top(t_stack *stack, t_node *best, int is_a);
-void	a_to_b(t_stack *a, t_stack *b);
-void	b_to_a(t_stack *a, t_stack  *b);
-void	min_on_top(t_stack *a);
+void		a_to_b(t_stack *a, t_stack *b);
+void		b_to_a(t_stack *a, t_stack *b);
+void		min_on_top(t_stack *a);
 
 int			is_integer(char	*str);
 int			check_av(char **av);

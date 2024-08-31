@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 05:17:11 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 16:25:42 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	is_sorted(t_stack *stack)
 {
 	t_node	*tmp;
 
-	if (!stack || !stack->top )
+	if (!stack || !stack->top)
 		return (0);
 	tmp = stack->top;
 	while (tmp->next)

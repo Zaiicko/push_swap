@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 01:52:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 06:06:21 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 16:32:04 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_node	*find_max_int(t_stack *stack)
 
 void	min_target_closer(t_stack *a, t_stack *b)
 {
-	int	min;
+	int		min;
 	t_node	*tmp_a;
 	t_node	*tmp_b;
 
@@ -80,9 +80,9 @@ void	max_target_closer(t_stack *b, t_stack *a)
 
 void	set_pos(t_stack *a, t_stack *b)
 {
-	int	i;
-	int	med_a;
-	int	med_b;
+	int		i;
+	int		med_a;
+	int		med_b;
 	t_node	*tmp;
 
 	i = 0;

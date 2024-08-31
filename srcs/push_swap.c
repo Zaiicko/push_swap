@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:19 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 06:15:34 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 16:32:47 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	sort_stack(t_stack *a, t_stack *b)
 		max_target_closer(b, a);
 		b_to_a(a, b);
 	}
-
 }
 
 void	push_swap(t_stack *a, t_stack *b)

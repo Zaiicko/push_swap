@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:19 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 06:17:45 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/08/31 16:36:06 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	set_min_moves(t_stack *a, t_stack *b)
 }
 
 t_node	*get_best_min_mov(t_stack *a)
-{ 
+{
 	int		min_moves;
 	t_node	*tmp;
 	t_node	*best;
@@ -103,7 +103,7 @@ void	a_to_b(t_stack *a, t_stack *b)
 	pb(a, b);
 }
 
-void	b_to_a(t_stack *a, t_stack  *b)
+void	b_to_a(t_stack *a, t_stack *b)
 {
 	best_min_move_top(a, b->top->target, 1);
 	pa(a, b);
