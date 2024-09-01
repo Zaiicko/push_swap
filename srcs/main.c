@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:04:49 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 21:25:33 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/01 20:14:14 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 	a = ft_reset_stack();
 	b = ft_reset_stack();
 	args_parser(ac, av);
-	fill_stack(av + 1, a);
+	fill_stack(av + 1, a, ac);
 	push_swap(a, b);
 	ft_free_lst(a->top);
 	free(a);

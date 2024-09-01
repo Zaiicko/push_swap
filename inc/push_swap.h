@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/01 05:26:35 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/01 20:04:14 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void		ft_error(void);
 t_stack		*ft_reset_stack(void);
 
 void		add_int(int data, t_stack *stack);
-void		fill_stack(char **av, t_stack *stack);
+void		fill_stack(char **av, t_stack *stack, int ac);
+void		add_all_int(char **av, t_stack *stack, int i);
 
 void		swap(t_stack *stack);
 void		ss(t_stack *a, t_stack *b);

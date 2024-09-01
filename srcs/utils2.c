@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 16:25:42 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/01 20:07:23 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,26 @@ void	add_int(int data, t_stack *stack)
 	stack->size++;
 }
 
-void	fill_stack(char **av, t_stack *stack)
+void	fill_stack(char **av, t_stack *stack, int ac)
 {
 	size_t	i;
-	int		data;
+	char	**tab;
 
 	if (!stack)
 		ft_error();
 	i = 0;
-	while (av[i])
+	if (ac == 2)
 	{
-		data = ft_atoi(av[i]);
-		add_int(data, stack);
-		i++;
+		tab = ft_split(av[0], ' ');
+		if (!tab)
+		{
+			ft_free_tab(tab);
+			ft_error();
+		}
+		add_all_int(tab, stack, i);
 	}
+	else
+		add_all_int(av, stack, i);
 }
 
 long long	ft_matoi(const char *str)

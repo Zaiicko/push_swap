@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 17:30:45 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 17:37:31 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/01 20:11:34 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,18 @@ void	set_pos_node(t_node *tmp, int i, int med)
 		tmp->pos = i;
 		i++;
 		tmp = tmp->next;
+	}
+}
+
+void	add_all_int(char **av, t_stack *stack, int i)
+{
+	int	data;
+
+	data = 0;
+	while (av[i])
+	{
+		data = ft_atoi(av[i]);
+		add_int(data, stack);
+		i++;
 	}
 }
