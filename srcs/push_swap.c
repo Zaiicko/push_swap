@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 23:28:19 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 16:32:47 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/01 05:19:29 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sort_three(t_stack *a)
 		sa(a);
 }
 
-void	sort_stack(t_stack *a, t_stack *b)
+void	sort_stack(t_stack *a, t_stack *b, int if_five_size)
 {
 	if (a->size > 3 && !is_sorted(a))
 		pb(a, b);
@@ -45,6 +45,7 @@ void	sort_stack(t_stack *a, t_stack *b)
 		max_target_closer(b, a);
 		b_to_a(a, b);
 	}
+	min_on_top(a, if_five_size);
 }
 
 void	push_swap(t_stack *a, t_stack *b)
@@ -55,8 +56,9 @@ void	push_swap(t_stack *a, t_stack *b)
 			sa(a);
 		else if (a->size == 3)
 			sort_three(a);
+		else if (a->size <= 5)
+			sort_stack(a, b, 1);
 		else
-			sort_stack(a, b);
-		min_on_top(a);
+			sort_stack(a, b, 0);
 	}
 }

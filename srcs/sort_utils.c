@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 01:52:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/08/31 17:36:15 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/01 05:27:00 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,16 +95,26 @@ void	set_pos(t_stack *a, t_stack *b)
 	set_pos_node(tmp, i, med_b);
 }
 
-void	min_on_top(t_stack *a)
+void	min_on_top(t_stack *a, int if_five_size)
 {
 	t_node	*min_node;
 
 	min_node = find_min_int(a);
 	while (a->top->data != min_node->data)
 	{
-		if (min_node->above_median)
-			ra(a);
+		if (if_five_size)
+		{
+			if (min_node->above_median)
+				rra(a);
+			else
+				ra(a);
+		}
 		else
-			rra(a);
+		{
+			if (min_node->above_median)
+				ra(a);
+			else
+				rra(a);
+		}
 	}
 }
