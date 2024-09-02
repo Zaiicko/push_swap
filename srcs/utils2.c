@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/01 20:07:23 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/02 03:04:58 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,17 @@ long long	ft_matoi(const char *str)
 	return (nbr * signe);
 }
 
-int	is_sorted(t_stack *stack)
+void	add_all_int(char **av, t_stack *stack, int i)
 {
-	t_node	*tmp;
+	int	data;
 
-	if (!stack || !stack->top)
-		return (0);
-	tmp = stack->top;
-	while (tmp->next)
+	data = 0;
+	while (av[i])
 	{
-		if (tmp->data > tmp->next->data)
-			return (0);
-		tmp = tmp->next;
+		data = ft_atoi(av[i]);
+		add_int(data, stack);
+		i++;
 	}
-	return (1);
 }
 
 t_node	*find_min_int(t_stack *stack)
