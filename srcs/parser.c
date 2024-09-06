@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 03:28:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/02 00:22:30 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/06 19:11:09 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ void	args_parser(int ac, char **av)
 
 	if (ac < 2)
 		exit(0);
+	else if (!av[1][0])
+		ft_error();
 	else if (ac > 2)
 	{
 		if (!check_av(av + 1))
