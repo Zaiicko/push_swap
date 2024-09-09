@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 18:51:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/02 03:04:58 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/09 03:18:25 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	fill_stack(char **av, t_stack *stack, int ac)
 			ft_error();
 		}
 		add_all_int(tab, stack, i);
+		ft_free_tab(tab);
 	}
 	else
 		add_all_int(av, stack, i);
