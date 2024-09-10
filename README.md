@@ -35,7 +35,6 @@ The program is implemented using a double linked list to manage the stacks. The 
 - `make clean`: Removes object files, keeping only the source code.
 - `make fclean`: Cleans the project by removing the compiled executable and object files.
 - `make re`: Performs a full recompilation by cleaning and then recompiling the project.
-- `make bonus`: (If applicable) Compiles bonus features or additional functionalities.
 
 ## Usage
 
